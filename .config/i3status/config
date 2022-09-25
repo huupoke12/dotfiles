@@ -1,0 +1,60 @@
+order = ""
+order += "wireless wlan0"
+order += "battery 0"
+order += "cpu_temperature igpu"
+order += "cpu_temperature cpu"
+order += "memory"
+# order += "volume source"
+order += "volume sink"
+order += "tztime local"
+
+wireless wlan0 {
+	format_up = "  %quality"
+	format_down = " "
+}
+
+battery 0 {
+	format = "%status %percentage"
+	format_down = "  :("
+	integer_battery_capacity = true
+	last_full_capacity = true
+	status_chr = " "
+	status_bat = " "
+	status_unk = " ?"
+	status_full = " "
+	threshold_type = "percentage"
+	low_threshold = "20"
+}
+
+cpu_temperature igpu {
+	path = "/sys/class/hwmon/hwmon4/temp1_input"
+	format = "  %degrees °C"
+}
+
+cpu_temperature cpu {
+	path = "/sys/class/hwmon/hwmon3/temp1_input"
+	format = "  %degrees °C"
+}
+
+memory {
+	format = "  %available"
+	threshold_degraded = "1G"
+	threshold_critical = "500M"
+}
+
+tztime local {
+	format = "  %F %a %T"
+	locale = "ja_JP.UTF-8"
+}
+
+# volume source {
+#	device = "pulse:alsa_input.pci-0000_05_00.6.analog-stereo"
+#	format = "  %volume"
+#	format_muted = "  %volume"
+# }
+
+volume sink {
+	device = "pulse:alsa_output.pci-0000_05_00.6.analog-stereo"
+	format = "  %volume"
+	format_muted = "  %volume"
+}
