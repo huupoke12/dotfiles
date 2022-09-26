@@ -23,7 +23,7 @@ battery 0 {
 	status_unk = " ?"
 	status_full = " "
 	threshold_type = "percentage"
-	low_threshold = "20"
+	low_threshold = "25"
 }
 
 cpu_temperature igpu {
