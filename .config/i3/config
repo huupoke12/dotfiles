@@ -203,6 +203,7 @@ for_window [window_role="About"] floating enable
 for_window [class="fontforge" title="Font Information for"] floating enable
 for_window [class="firefox"] move container to workspace number $ws_main
 for_window [class="hl2_linux"] move container to workspace number $ws_full
+for_window [class="bms_linux"] move container to workspace number $ws_full
 for_window [class="csgo_linux64"] move container to workspace number $ws_full
 for_window [class="osu!"] move container to workspace number $ws_full
 for_window [class="HitmanPro"] move container to workspace number $ws_full
@@ -218,8 +219,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86Calculator exec --no-startup-id i3-sensible-terminal -e python -ic "import math"
 bindsym XF86TouchpadOn exec --no-startup-id ~/scripts/toggle-touchpad.sh
 bindsym XF86TouchpadOff exec --no-startup-id ~/scripts/toggle-touchpad.sh
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -perceived -dec 4
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -perceived -inc 4
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -perceived -dec 2
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -perceived -inc 2
 # bindsym XF86TouchpadToggle exec --no-startup-id ~/scripts/toggle-touchpad.sh
 
 bindsym $mod+b exec $browser
