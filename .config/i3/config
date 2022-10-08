@@ -14,8 +14,9 @@ set $ws_full 2
 set $mod Mod4
 set $browser firefox
 
-set $colour_focused #4588aa
-set $colour_urgent #bf4040
+set $colour_foreground #f9f9f9
+set $colour_focused #01b6ed
+set $colour_urgent #fa2934
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -189,13 +190,13 @@ bar {
 	status_command i3status
 	font pango:sans-serif semibold 10
 	colors {
-		focused_workspace $colour_focused $colour_focused #ffffff
-		urgent_workspace $colour_urgent $colour_urgent #ffffff
+		focused_workspace $colour_focused $colour_focused $colour_foreground
+		urgent_workspace $colour_urgent $colour_urgent $colour_foreground
 	}
 }
 
-client.focused $colour_focused $colour_focused #ffffff
-client.urgent $colour_urgent $colour_urgent #ffffff
+client.focused $colour_focused $colour_focused $colour_foreground
+client.urgent $colour_urgent $colour_urgent $colour_foreground
 
 
 for_window [all] title_window_icon yes

@@ -1,7 +1,13 @@
+general {
+	color_bad = "#fa2934"
+	color_degraded = "#fff30a"
+	color_good = "#98e123"
+}
+
 order = ""
 order += "wireless wlan0"
 order += "battery 0"
-order += "cpu_temperature igpu"
+# order += "cpu_temperature igpu"
 order += "cpu_temperature cpu"
 order += "memory"
 # order += "volume source"
