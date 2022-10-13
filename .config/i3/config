@@ -14,9 +14,9 @@ set $ws_full 2
 set $mod Mod4
 set $browser firefox
 
-set $colour_foreground #f9f9f9
-set $colour_focused #01b6ed
-set $colour_urgent #fa2934
+set $colour_foreground #121212
+set $colour_focused #51ceff
+set $colour_urgent #f6669d
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.

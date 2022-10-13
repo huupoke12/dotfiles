@@ -2,7 +2,9 @@
 font = monospace 10
 
 [urgency_normal]
-background = "#01b6ed"
+background = "#51ceff"
+foreground = "#121212"
 
 [urgency_critical]
-background = "#fa2934"
+background = "#f6669d"
+foreground = "#121212"
