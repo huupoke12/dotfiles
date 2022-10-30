@@ -35,7 +35,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/scripts/lock-screen.sh --nofork --color=000000
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/scripts/lock-screen.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -217,9 +217,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2dB && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86Calculator exec --no-startup-id i3-sensible-terminal -e python -ic "import math"
-bindsym XF86TouchpadOn exec --no-startup-id ~/scripts/toggle-touchpad.sh
-bindsym XF86TouchpadOff exec --no-startup-id ~/scripts/toggle-touchpad.sh
+bindsym XF86Calculator exec --no-startup-id i3-sensible-terminal -e ~/scripts/calculator.sh
+#bindsym XF86TouchpadOn exec --no-startup-id ~/scripts/toggle-touchpad.sh
+#bindsym XF86TouchpadOff exec --no-startup-id ~/scripts/toggle-touchpad.sh
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -perceived -dec 2
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -perceived -inc 2
 # bindsym XF86TouchpadToggle exec --no-startup-id ~/scripts/toggle-touchpad.sh
