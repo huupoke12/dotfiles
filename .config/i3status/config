@@ -1,7 +1,7 @@
 general {
-	color_bad = "#fa2934"
-	color_degraded = "#fff30a"
-	color_good = "#98e123"
+	color_bad = "#f4005f"
+	color_degraded = "#fd971f"
+	color_good = "#98e024"
 }
 
 order = ""
