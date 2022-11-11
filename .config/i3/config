@@ -14,10 +14,13 @@ set $ws_full 2
 set $mod Mod4
 set $browser firefox
 
-set $colour_foreground #d9d9d9
-set $colour_background #0c0c0c
-set $colour_focused #58d1eb
-set $colour_urgent #f4005f
+set $colour_background #282A2E
+set $colour_background-alt #373B41
+set $colour_foreground #C5C8C6
+set $colour_primary #F0C674
+set $colour_secondary #8ABEB7
+set $colour_alert #A54242
+set $colour_disabled #707880
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -55,7 +58,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -sb "$colour_focused" -sf "$colour_background" -fn "sans-serif:style=medium:size=10"
+bindsym $mod+d exec --no-startup-id dmenu_run -sb "$colour_primary" -sf "$colour_background" -fn "sans-serif:medium:size=10"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -183,23 +186,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-
-bar {
-	status_command i3status
-	font pango:sans-serif semibold 10
-	colors {
-		background $colour_background
-		statusline $colour_foreground
-		focused_workspace $colour_focused $colour_focused $colour_background
-		urgent_workspace $colour_urgent $colour_urgent $colour_foreground
-	}
-}
-
-client.focused $colour_focused $colour_focused $colour_background
-client.urgent $colour_urgent $colour_urgent $colour_foreground
+client.focused $colour_background $colour_background $colour_primary
+client.unfocused $colour_background $colour_background $colour_disabled
+client.urgent $colour_alert $colour_alert $colour_foreground
 
 
 for_window [all] title_window_icon yes
@@ -239,6 +228,7 @@ bindsym --release Mod4+Shift+Print exec --no-startup-id ~/scripts/take-screensho
 
 #exec --no-startup-id ~/.fehbg
 exec --no-startup-id numlockx
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id ibus-daemon -drRx
 exec --no-startup-id easyeffects --gapplication-service
 #exec i3-sensible-terminal
