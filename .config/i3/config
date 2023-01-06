@@ -217,7 +217,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -perceived -inc 2
 # bindsym XF86TouchpadToggle exec --no-startup-id ~/scripts/toggle-touchpad.sh
 
 bindsym $mod+b exec $browser
-bindsym --release Ctrl+Shift+L exec --no-startup-id loginctl lock-session
+bindsym --release Ctrl+Mod1+L exec --no-startup-id loginctl lock-session
 
 bindsym --release Print exec --no-startup-id ~/scripts/take-screenshot.sh fullscreen clipboard
 bindsym --release Shift+Print exec --no-startup-id ~/scripts/take-screenshot.sh fullscreen file
